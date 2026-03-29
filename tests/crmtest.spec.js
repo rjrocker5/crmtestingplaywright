@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('to create new user account', async ({ page }) => {
  await page.goto('https://rahulshettyacademy.com/client/#/auth/register');
- await page.locator('//input[@id="firstName"]').fill('Israr');
+ await page.locator('//input[@id="firstName"]').fill('Israrr');
  await page.getByPlaceholder('Last Name').fill('Hussain');
  await page.getByPlaceholder('email@example.com').fill('iskkd1r@example.com');
  await page.getByPlaceholder('enter your number').fill('7992323760');
