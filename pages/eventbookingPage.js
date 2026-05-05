@@ -1,13 +1,15 @@
+import { BasePage } from './BasePage';
 import { EVENT_BOOKING_LOCATORS } from '../locators/eventbookingPageLocators';
+import { APP_URLS } from '../constants/urls';
 
-export class EventBookingPage {
+export class EventBookingPage extends BasePage {
   constructor(page) {
-    this.page = page;
+    super(page);
     this.locators = EVENT_BOOKING_LOCATORS;
   }
 
   async navigateToLogin() {
-    await this.page.goto('https://eventhub.rahulshettyacademy.com/login');
+    await this.navigateTo(APP_URLS.EVENT_BOOKING_LOGIN);
   }
 
   async login(email, password) {
@@ -40,9 +42,5 @@ export class EventBookingPage {
 
   async logout() {
     await this.page.locator(this.locators.logoutButton).click();
-  }
-
-  async waitForNavigation(timeout = 6000) {
-    await this.page.waitForTimeout(timeout);
   }
 }

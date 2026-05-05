@@ -1,11 +1,28 @@
 {
   "name": "playwright",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "Production-ready Playwright automation framework with POM and utilities",
   "main": "index.js",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "test:crm": "playwright test tests/crmtest.spec.js",
+    "test:event": "playwright test tests/eventbooking.spec.js",
+    "test:greenkart": "playwright test tests/greenkart.spec.js",
+    "report": "playwright show-report",
+    "codegen": "playwright codegen",
+    "trace": "playwright show-trace"
+  },
+  "keywords": [
+    "playwright",
+    "automation",
+    "testing",
+    "pom",
+    "page-object-model"
+  ],
+  "author": "QA Team",
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {

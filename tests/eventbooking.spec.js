@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { EventBookingPage } from '../pages/eventbookingPage';
 import { eventBookingTestCredentials } from '../testdata/eventBookingTestData';
+import { waitForTimeout } from '../utils/waitUtils';
 
 test('to create new user account', async ({ page }) => {
   const eventBookingPage = new EventBookingPage(page);
@@ -20,6 +21,6 @@ test('to create new user account', async ({ page }) => {
   
   // Cleanup
   await eventBookingPage.logout();
-  await eventBookingPage.waitForNavigation(6000);
+  await waitForTimeout(6000);
   await page.context().close();
 });

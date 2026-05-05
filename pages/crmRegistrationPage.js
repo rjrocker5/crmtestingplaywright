@@ -1,13 +1,15 @@
+import { BasePage } from './BasePage';
 import { CRM_REGISTRATION_LOCATORS } from '../locators/crmRegistrationPageLocators';
+import { APP_URLS } from '../constants/urls';
 
-export class CRMRegistrationPage {
+export class CRMRegistrationPage extends BasePage {
   constructor(page) {
-    this.page = page;
+    super(page);
     this.locators = CRM_REGISTRATION_LOCATORS;
   }
 
   async navigateToRegistration() {
-    await this.page.goto('https://rahulshettyacademy.com/client/#/auth/register');
+    await this.navigateTo(APP_URLS.CRM_REGISTRATION);
   }
 
   async fillFirstName(firstName) {
@@ -48,10 +50,6 @@ export class CRMRegistrationPage {
 
   async submitForm() {
     await this.page.locator(this.locators.submitButton).click();
-  }
-
-  async waitForNavigation(timeout = 6000) {
-    await this.page.waitForTimeout(timeout);
   }
 
   async fillRegistrationForm(credentials) {
